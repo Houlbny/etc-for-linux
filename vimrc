@@ -27,3 +27,4 @@ func! CompileRunGcc()
         exec "!firefox %.html &"
     endif
 endfunc
+
