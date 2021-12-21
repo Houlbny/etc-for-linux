@@ -1,0 +1,34 @@
+#显示行号
+#vimrc文件中最后一行输入：set number 
+#tab空格 set tabstop=4 set shiftwidth=4
+#代码补全插件 snipmate
+
+#先安装 pathogen 用来统一管理 vim 插件包 
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://gitee.com/jojo2019007/vim-pathogen/raw/master/autoload/pathogen.vim
+
+# 新建~/.vimrc 文件并添加以下代码：		
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+#删除插件
+cd /root/.vim/bundle
+
+cd ~/.vim/bundle
+git clone https://gitee.com/mamamiyear/tlib_vim.git
+git clone https://gitee.com/vim_runtime_plugins/vim-addon-mw-utils.git
+git clone https://gitee.com/vim_runtime_plugins/vim-snipmate.git
+
+cd ~/.vim/bundle
+git clone https://gitee.com/chenjo/vim-snippets.git
+
+#语法检查插件 Syntastic
+cd ~/.vim/bundle && \
+git clone https://github.com/scrooloose/syntastic.git
+
+#编辑提示插件 jedi-vim 
+#centos7 下缺少vim-gnome-py2 安装会失败
+cd ~/.vim/bundle && \
+git clone http://github.com/davidhalter/jedi-vim
+
